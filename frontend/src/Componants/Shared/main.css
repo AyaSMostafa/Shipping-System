@@ -1,0 +1,325 @@
+/**
+* Template Name: Nova - v1.0.0
+* Template URL: https://bootstrapmade.com/nova-bootstrap-business-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Set main reusable colors and fonts using CSS variables
+# Learn more about CSS variables at https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  /* --font-default: Open Sans, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --font-primary: Montserrat, sans-serif;
+  --font-secondary: Raleway, sans-serif; */
+  --font-default: "Changa", sans-serif;
+  --font-primary: "Changa", sans-serif;
+  --font-secondary: "Changa", sans-serif;
+}
+
+/* Colors */
+:root {
+  --color-default: #2b180d;
+  --color-primary: #56b8e6;
+  --color-secondary: #1b2f45;
+}
+
+/* Smooth scroll behavior */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: var(--font-default);
+  color: #2170a9;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #82cbed;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+}
+
+/*--------------------------------------------------------------
+# Sections & Section Header
+--------------------------------------------------------------*/
+section {
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 140px 0 60px 0;
+  min-height: 30vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.breadcrumbs:before {
+  content: "";
+  background-color: rgba(27, 47, 69, 0.7);
+  position: absolute;
+  inset: 0;
+}
+
+.breadcrumbs h2 {
+  font-size: 56px;
+  font-weight: 500;
+  color: #fff;
+  font-family: var(--font-secondary);
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.breadcrumbs ol a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: 0.3s;
+}
+
+.breadcrumbs ol a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #fff;
+  content: "/";
+}
+
+/*--------------------------------------------------------------
+# Scroll top button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background: rgba(86, 184, 230, 0.8);
+  color: #fff;
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid var(--color-primary);
+  border-top-color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: url("../../assets/img/hero-bg.jpg") top center;
+  background-size: cover;
+  position: relative;
+  padding: 120px 0;
+  z-index: 3;
+}
+
+@media (min-width: 1034px) {
+  .hero:after {
+    position: absolute;
+    content: "";
+    width: 40%;
+    background: var(--color-secondary);
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.hero:before {
+  position: absolute;
+  content: "";
+  background: rgba(27, 47, 69, 0.6);
+  inset: 0;
+}
+
+@media (max-width: 1034px) {
+  .hero:before {
+    background: rgba(27, 47, 69, 0.7);
+  }
+}
+
+.hero .container {
+  z-index: 1;
+}
+
+@media (min-width: 1365px) {
+  .hero {
+    background-attachment: fixed;
+  }
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  font-family: var(--font-secondary);
+}
+
+.hero blockquote {
+  color: #fff;
+  padding-left: 20px;
+  font-size: 15px;
+  font-family: var(--font-default);
+  border-left: 2px solid var(--color-primary);
+  margin: 40px 0;
+}
+
+.hero .btn-get-started:hover {
+  background: rgba(86, 184, 230, 0.8);
+}
+
+.hero .btn-watch-video {
+  font-size: 16px;
+  transition: 0.5s;
+  margin-left: 25px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.hero .btn-watch-video i {
+  color: var(--color-primary);
+  font-size: 32px;
+  transition: 0.3s;
+  line-height: 0;
+  margin-right: 8px;
+}
+
+.hero .btn-watch-video:hover {
+  color: #fff;
+}
+
+.hero .btn-watch-video:hover i {
+  color: #82cbed;
+}
+
+@media (max-width: 640px) {
+  .hero h2 {
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  .hero .btn-get-started,
+  .hero .btn-watch-video {
+    font-size: 13px;
+  }
+}
+
+a {
+  text-decoration: none !important;
+}
+
+#lin {
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  color: #fff !important;
+  background: var(--color-primary);
+  font-size: large;
+}
